@@ -2,6 +2,12 @@
 
 let searchBtn = document.getElementById("apiBtn");
 searchBtn.addEventListener("click", fetchUrl);
+let searchEnter = document.getElementById("apiSearch");
+searchEnter.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    fetchUrl();
+  }
+});
 
 const [timestamp, apiKey, hashValue] = [ts, publicKey, hashVal];
 
