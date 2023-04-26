@@ -12,7 +12,7 @@ function fetchUrl() {
   console.log(url2);
   fetch(url2)
     .then(function (response) {
-      return response.json;
+      return response.json();
     })
     .then(function (data) {
       console.log(data);
