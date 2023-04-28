@@ -26,7 +26,7 @@ function getUrlAPI() {
   let searchP = searchHero.value.trim();
   // Account for spaces
   searchP = searchP.replaceAll(" ", "%20");
-  let url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&name=${searchP}`;
+  let url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&nameStartsWith=${searchP}`;
   console.log(url);
   // Check for blank input
   if (searchP.length <= 0) {
