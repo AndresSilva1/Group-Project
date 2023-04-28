@@ -55,7 +55,10 @@
             </div>
             <div class="top-bar-right">
                 <ul class="menu">
-                    <li><input type="search" placeholder="Search"></li>
+                    <li><input type="search" id="apiSearch">
+                        <div id="suggestions"></div>
+                        <div id="displaySuggestions"></div>
+                    </li>
                     <li><button type="button" class="button">Search</button></li>
                 </ul>
             </div>
@@ -404,6 +407,8 @@
     <script>
         $(document).foundation();
     </script>
+    <script src="api-data.js"></script>
+    <script src="marvel.js"></script>
 </body>
 
 </html>
