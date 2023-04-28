@@ -1,19 +1,56 @@
-$(document).ready(function () {
+/** @format */
 
-    $.ajax({
-        type: "GET",
-        url: "https://en.wikipedia.org/wiki/Astonishing_Spider-Man_%26_Wolverine#Reception",
-        contentType: "application/json; charset=utf-8",
-        async: false,
-        dataType: "json",
-        success: function (data, textStatus, jqXHR) {
-
-            var markup = data.parse.text["*"];
-            var blurb = $('<div></div>').html(markup);
-            $('#article').html($(blurb).find('p'));
-
-        },
-        error: function (errorMessage) {
-        }
-    });
+let dataArray = [];
+let searchBtn = document.querySelector(".button");
+let suggestionContainer = document.querySelector("#suggestionContainer");
+searchBtn.addEventListener("click", fetchUrl);
+let searchEnter = document.querySelector("#apiSearch");
+searchEnter.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    fetchUrl();
+  }
 });
+
+const [timestamp, apiKey, hashValue] = [ts, publicKey, hashVal];
+
+function fetchUrl() {
+  let searchHero = document.getElementById("apiSearch");
+  let searchP = searchHero.value;
+  let url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&nameStartsWith=${searchP}`;
+  console.log(url);
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      dataArray = data.data["results"];
+    });
+}
+
+document.querySelector("#submadsfasd").innerHTML = array["description"];
+
+// function clearSuggestions() {
+//   document.querySelector("#suggestionContainer").innerHTML = "";
+// }
+
+// // Predictive api search
+// apiSearch.addEventListener("keyup", async function () {
+//   clearSuggestions();
+//   console.log(apiSearch.value);
+//   if (apiSearch.value.length <= 3) {
+//     return false;
+//   }
+
+//   fetchUrl();
+
+//   dataArray.forEach((suggestion) => {
+//     let hero = suggestion.name;
+//     console.log(hero);
+//     let d = document.createElement("div");
+//     d.innerHTML = "<p>" + hero + "</p>";
+
+//     searchEnter.appendChild(d);
+//   });
+
+//   return;
+// });
