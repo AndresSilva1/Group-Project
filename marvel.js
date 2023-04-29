@@ -2,6 +2,7 @@
 
 let dataArray = [];
 let chosenHero = "";
+let chosenHeroID = "";
 let desc = "";
 let pic = "";
 let searchBtn = document.querySelector("#APIButton");
@@ -9,6 +10,8 @@ let displaySuggestions = document.querySelector("#displaySuggestions");
 searchBtn.addEventListener("click", getData);
 let searchEnter = document.querySelector("#apiSearch");
 let suggestions = document.querySelector("#suggestions");
+let localStorage;
+
 searchEnter.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     getData();
@@ -31,7 +34,9 @@ function getUrlAPI() {
   let searchP = searchHero.value.trim();
   // Account for spaces
   searchP = searchP.replaceAll(" ", "%20");
-  let url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&name=${searchP}`;
+  let url = `https://gateway.marvel.com:443/v1/public/characters?${chosenHeroID}&ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}`;
+
+  // let url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&nameStartsWith=${searchP}`;
   console.log(url);
   // Check for blank input
   if (searchP.length <= 0) {
@@ -72,6 +77,7 @@ async function fetchUrl(url) {
 apiSearch.addEventListener("keyup", async function () {
   clearSuggestions();
   if (apiSearch.value.length < 3) {
+    clearSuggestions();
     return false;
   }
 
@@ -80,14 +86,9 @@ apiSearch.addEventListener("keyup", async function () {
 
   dataArray.forEach((suggestion) => {
     let heroSug = suggestion.name;
-    chosenHero = heroSug;
-    desc = suggestion.description;
-    pic =
-      suggestion["thumbnail"]["path"] +
-      "." +
-      suggestion["thumbnail"]["extension"];
     let d = document.createElement("div");
     d.style.cursor = "pointer";
+    d.setAttribute("id", toString(suggestion.id));
     d.setAttribute("onclick", "displayHero('" + heroSug + "')");
     d.innerHTML = "<p>" + heroSug + "</p>";
 
@@ -97,9 +98,11 @@ apiSearch.addEventListener("keyup", async function () {
   return;
 });
 
-function displayHero(hero) {
+function displayHero(hero, id) {
+  console.log(hero, id);
   searchEnter.value = hero;
   chosenHero = hero;
+  chosenHeroID = id;
   clearSuggestions();
   getData();
   return;
@@ -112,4 +115,10 @@ function setAPIData() {
   return;
 }
 
-window.addEventListener("load", getData);
+function onLoad() {
+  // Default value when page opens
+  searchEnter.value = "Thor";
+  getData();
+}
+
+window.addEventListener("load", onLoad);
