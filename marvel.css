@@ -10,3 +10,10 @@
 .top-bar-right {
   position: absolute;
 }
+
+#heroName {
+  border: 4px solid pink;
+  background-color: black;
+  width: 80%;
+  color: grey;
+}
