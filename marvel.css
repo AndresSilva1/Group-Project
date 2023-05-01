@@ -7,13 +7,39 @@
   background-size: contain;
 }
 
-.top-bar-right {
-  position: absolute;
+.search-container {
+  display: flex;
+}
+
+#submit-button {
+  border: 3px solid black;
 }
 
 #heroName {
-  border: 4px solid pink;
-  background-color: black;
+  font-size: 4rem;
+}
+
+.top-bar-right {
+  border: 3px solid red;
+  width: 40%;
+}
+
+#search-bar {
   width: 80%;
-  color: grey;
+  border: 3px solid black;
+}
+
+#input-search {
+  width: 100%;
+}
+
+#search-button {
+  border: 3px solid blue;
+  margin: 0 0.5rem;
+}
+
+#suggestions {
+  position: absolute;
+  background-color: #eee;
+  z-index: 1;
 }

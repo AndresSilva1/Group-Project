@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="/marvel.css">
 </head>
 
 <body>
@@ -54,13 +55,15 @@
                 </ul>
             </div>
             <div class="top-bar-right">
-                <ul class="menu">
-                    <li><input type="search" id="apiSearch">
+                <div class="search-container">
+                    <div id="search-bar">
+                        <input type="text" id="input-search" value="Thor">
                         <div id="suggestions"></div>
-                        <div id="displaySuggestions"></div>
-                    </li>
-                    <li><button type="button" id="APIButton" class="button">Search</button></li>
-                </ul>
+                    </div>
+                    <div id="search-button">
+                        <button id="submit-search">Find Hero</button>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /Sub Navigation -->
@@ -414,7 +417,8 @@
         $(document).foundation();
     </script>
     <script src="api-data.js"></script>
-    <script src="marvel.js"></script>
+    <!-- <script src="marvel.js"></script> -->
+    <script src="index.js"></script>
 </body>
 
 </html>

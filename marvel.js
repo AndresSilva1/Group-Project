@@ -85,6 +85,7 @@ apiSearch.addEventListener("keyup", async function () {
   fetchUrl(url);
 
   dataArray.forEach((suggestion) => {
+    storeHeroes(suggestion);
     let heroSug = suggestion.name;
     let d = document.createElement("div");
     d.style.cursor = "pointer";
@@ -98,11 +99,24 @@ apiSearch.addEventListener("keyup", async function () {
   return;
 });
 
-function displayHero(hero, id) {
-  console.log(hero, id);
+function storeHeroes(suggestion) {
+  imageUrl =
+    suggestion["thumbnail"]["path"] +
+    "." +
+    suggestion["thumbnail"]["extension"];
+  let heroArray = [
+    suggestion.name,
+    suggestion.id,
+    suggestion.description,
+    imageUrl,
+  ];
+
+  return;
+}
+
+function displayHero(hero) {
   searchEnter.value = hero;
   chosenHero = hero;
-  chosenHeroID = id;
   clearSuggestions();
   getData();
   return;
@@ -116,9 +130,16 @@ function setAPIData() {
 }
 
 function onLoad() {
+  console.log("LOAD");
   // Default value when page opens
   searchEnter.value = "Thor";
+
+  let url = `https://gateway.marvel.com:443/v1/public/characters?&ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}`;
+  console.log(url);
+  fetchUrl(url);
+  console.log(dataArray);
+  localStorage["heroList"] = JSON.stringify(dataArray);
   getData();
 }
 
-window.addEventListener("load", onLoad);
+window.onload = onLoad();
