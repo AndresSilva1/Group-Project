@@ -35,13 +35,17 @@ function showSuggestions() {
     let d = document.createElement("div");
 
     d.style.cursor = "pointer";
-    d.textContent = hero;
+    let len = search.value.length;
+    let heroText =
+      "<b>" + hero.substring(0, len) + "</b>" + hero.substring(len);
+    d.innerHTML = heroText;
     d.setAttribute("onclick", "selectSuggestion('" + hero + "')");
     suggestions.appendChild(d);
   });
 }
 
 function selectSuggestion(hero) {
+  clearSuggestions();
   search.value = hero;
 }
 
