@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="/marvel.css">
 </head>
 
 <body>
@@ -54,10 +55,15 @@
                 </ul>
             </div>
             <div class="top-bar-right">
-                <ul class="menu">
-                    <li><input type="search" placeholder="Search"></li>
-                    <li><button type="button" class="button">Search</button></li>
-                </ul>
+                <div class="search-container">
+                    <div id="search-bar">
+                        <input type="text" id="input-search" value="Thor">
+                        <div id="suggestions"></div>
+                    </div>
+                    <div id="search-button">
+                        <button id="submit-search">Find Hero</button>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /Sub Navigation -->
@@ -139,20 +145,273 @@
     <div class="row">
         <div class="medium-8 columns">
             <p>
-                <iframe width="560" height="315" src="https://www.youtube.com/watch?v=_oCf8qmnL0k
-                " frameborder="0" allowfullscreen></iframe>
-                </iframe>
+                <img src=https://www.igeeksblog.com/wp-content/uploads/2022/10/How-to-use-weather-app-on-iPhone-and-iPad.jpg"
+                    alt="article promo image">
             </p>
         </div>
         <!-- lines 148-152 are the lines we need for containing the weather api data
         this needs a title or image of something like "weather at stark tower etc" -->
         <div class="medium-4 columns">
-                    <ul id= 'weatherApi'>
-
-                    </ul>
+            <p><img src="https://static1.dualshockersimages.com/wordpress/wp-content/uploads/2018/08/Spider-Man_PS4_Preview_Swing_Day_1532954579.jpg"
+                    alt="article promo image" alt="advertisement for deep fried Twinkies"></p>
+            <p><img src="https://www.movievine.com/wp-content/uploads/2011/11/the-avengers-banner.jpeg"
+                    alt="article promo image"></p>
         </div>
     </div>
 
+    <div id="apiContainer">
+        <div id="heroName"></div>
+        <div id="heroThumbnail"><img id="heroImage" src="" alt=""></div>
+        <div id="heroDescription"></div>
+    </div>
+
+    <hr>
+
+    <div class="row column">
+        <h4 style="margin: 0;" class="text-center">Stark Tower</h4>
+    </div>
+
+    <hr>
+
+    <div class="row small-up-3 medium-up-4 large-up-5">
+
+        <div class="column">
+            <img src="./assets/Hulk.jpeg" alt="image for article">
+        </div>
+
+        <div class="column">
+            <img src="./assets/Iron Man.webp" alt="image for article">
+        </div>
+
+        <div class="column">
+            <img src="./assets/Loki.webp" alt="image for article">
+        </div>
+
+        <div class="column show-for-medium">
+            <img src="./assets/Spiderman-Avengers.webp" alt="image for article">
+        </div>
+
+    </div>
+
+    <hr>
+
+
+    <hr>
+
+    <div class="row">
+        <div class="large-6 columns">
+            <p><img src="https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/b2/d0/ef/b2d0efa6-060a-76a5-d169-83ca6011c193/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x600wa.png"
+                    alt="image for article" alt="article preview image"></p>
+        </div>
+        <div class="large-6 columns">
+            <h5><a href="#">Astronaut's Watch Worn on the Moon Sells for Record $1.6 Million</a></h5>
+            <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum
+                delectus
+                aperiam nesciunt magni facilis ullam.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="large-6 columns">
+            <p><img src="./assets/comic-con.jpeg" alt="image for article" alt="article preview image"></p>
+        </div>
+        <div class="large-6 columns">
+            <h5><a href="#">Comic-Con Convention!!</a></h5>
+            <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum
+                delectus
+                aperiam nesciunt magni facilis ullam.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="large-6 columns">
+            <p><img src="./assets/Iron man vs Hulk.jpeg" alt="image for article" alt="article preview image"></p>
+        </div>
+        <div class="large-6 columns">
+            <h5><a href="#">Rainy Day in this battlezone</a></h5>
+            <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum
+                delectus
+                aperiam nesciunt magni facilis ullam.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="large-6 columns">
+            <p><img src="./assets/Weather app.webp" alt="image for article" alt="article preview image"></p>
+        </div>
+        <div class="large-6 columns">
+            <h5><a href="#">Best Space Books and Sci-Fi: A Space.com Reading List</a></h5>
+            <p>
+                <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
+                <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
+                <span><i class="fi-comments"> 6 comments</i></span>
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum
+                delectus
+                aperiam nesciunt magni facilis ullam.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+        <li class="disabled">Previous <span class="show-for-sr">page</span></li>
+        <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+        <li><a href="#" aria-label="Page 2">2</a></li>
+        <li><a href="#" aria-label="Page 3">3</a></li>
+        <li><a href="#" aria-label="Page 4">4</a></li>
+        <li><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+    </ul>
+
+    </article>
+
+    </div>
+
+    <div class="large-4 columns">
+
+        <aside>
+
+            <div class="row small-up-3">
+
+                <div class="column text-center">
+                    <i class="fi-social-facebook"></i>
+                    <h6>56,009</h6>
+                    <p><small>FOLLOWERS</small></p>
+                    <br>
+                </div>
+
+                <div class="column text-center">
+                    <i class="fi-social-twitter"></i>
+                    <h6>76,905</h6>
+                    <p><small>FOLLOWERS</small></p>
+                    <br>
+                </div>
+
+                <div class="column text-center">
+                    <i class="fi-social-instagram"></i>
+                    <h6>34,099</h6>
+                    <p><small>FOLLOWERS</small></p>
+                    <br>
+                </div>
+
+                <div class="column text-center">
+                    <i class="fi-social-tumblr"></i>
+                    <h6>13,765</h6>
+                    <p><small>FOLLOWERS</small></p>
+                </div>
+
+                <div class="column text-center">
+                    <i class="fi-social-pinterest"></i>
+                    <h6>9,283</h6>
+                    <p><small>FOLLOWERS</small></p>
+                </div>
+
+                <div class="column text-center">
+                    <i class="fi-social-youtube"></i>
+                    <h6>99,000</h6>
+                    <p><small>FOLLOWERS</small></p>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="row column">
+                <p class="lead">FROM OUR FRIENDS</p>
+                <p><img src="https://placehold.it/400x300&text=Buy Me!" alt="advertisement of ShamWow"></p>
+            </div>
+
+            <br>
+
+            <div class="row column">
+                <p class="lead">TRENDING POSTS</p>
+
+                <div class="media-object">
+                    <div class="media-object-section">
+                        <img class="thumbnail" src="https://placehold.it/100">
+                    </div>
+                    <div class="media-object-section">
+                        <h5>All I need is a space suit and I'm ready to go.</h5>
+                    </div>
+                </div>
+
+                <div class="media-object">
+                    <div class="media-object-section">
+                        <img class="thumbnail" src="https://placehold.it/100">
+                    </div>
+                    <div class="media-object-section">
+                        <h5>Are the stars out tonight? I don't know if it's cloudy or bright.</h5>
+                    </div>
+                </div>
+
+                <div class="media-object">
+                    <div class="media-object-section">
+                        <img class="thumbnail" src="https://placehold.it/100">
+                    </div>
+                    <div class="media-object-section">
+                        <h5>And the world keeps spinning.</h5>
+                    </div>
+                </div>
+
+                <div class="media-object">
+                    <div class="media-object-section">
+                        <img class="thumbnail" src="https://placehold.it/100">
+                    </div>
+                    <div class="media-object-section">
+                        <h5>Cold hearted orb that rules the night.</h5>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+    </div>
+
+    <footer>
+        <div class="row expanded callout secondary">
+
+        </div>
+        <div class="row expanded">
+
+            <div class="medium-6 columns">
+                <ul class="menu">
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Partner</a></li>
+                    <li><a href="#">Explore</a></li>
+                </ul>
+            </div>
+
+            <div class="medium-6 columns">
+                <ul class="menu align-right">
+                    <li class="menu-text">Copyright © 2099 Random Mag</li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
@@ -160,6 +419,9 @@
         $(document).foundation();
     </script>
     <script src="assets/js/hansweather.js"></script>
+    <script src="api-data.js"></script>
+    <!-- <script src="marvel.js"></script> -->
+    <script src="index.js"></script>
 </body>
 
 </html>

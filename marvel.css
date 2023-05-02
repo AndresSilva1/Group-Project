@@ -1,6 +1,45 @@
+/** @format */
+
 .medium-4 columns {
-    color: #fff;
-    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMarvel_Comics&psig=AOvVaw2Gy7CBfGhbjU-uR9ydRTrl&ust=1682649778205000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIDtzYSFyf4CFQAAAAAdAAAAABAI");
-    background-position: center;
-    background-size: contain;
+  color: #fff;
+  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FMarvel_Comics&psig=AOvVaw2Gy7CBfGhbjU-uR9ydRTrl&ust=1682649778205000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCIDtzYSFyf4CFQAAAAAdAAAAABAI");
+  background-position: center;
+  background-size: contain;
+}
+
+.search-container {
+  display: flex;
+}
+
+#submit-button {
+  border: 3px solid black;
+}
+
+#heroName {
+  font-size: 4rem;
+}
+
+.top-bar-right {
+  border: 3px solid red;
+  width: 40%;
+}
+
+#search-bar {
+  width: 80%;
+  border: 3px solid black;
+}
+
+#input-search {
+  width: 100%;
+}
+
+#search-button {
+  border: 3px solid blue;
+  margin: 0 0.5rem;
+}
+
+#suggestions {
+  position: absolute;
+  background-color: #eee;
+  z-index: 1;
 }
