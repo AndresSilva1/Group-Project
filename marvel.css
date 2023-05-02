@@ -20,11 +20,12 @@
 }
 
 .top-bar-right {
-  border: 3px solid red;
+  border: 3px solid white;
   width: 40%;
 }
 
 #search-bar {
+  font-family: sans-serif;
   width: 80%;
   border: 3px solid black;
 }
@@ -34,7 +35,8 @@
 }
 
 #search-button {
-  border: 3px solid blue;
+  font-family: sans-serif;
+  border: 3px solid black;
   margin: 0 0.5rem;
 }
 
