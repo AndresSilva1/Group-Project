@@ -9,7 +9,7 @@ Along with our application, it also pulls the current weather of our headquarter
 from the https://openweathermap.org/ API.
 The overall vision for the application we created is to gather Marvel fans all over the world to a centralize hub.
 
-[Repository])(https://github.com/AndresSilva1/Group-Project)
+[Repository](https://github.com/AndresSilva1/Group-Project)
 [Webpage](https://andressilva1.github.io/Group-Project/)
 
 ![Screenshot](assets/screenshot.png)
