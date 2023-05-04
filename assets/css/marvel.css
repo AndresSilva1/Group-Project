@@ -13,17 +13,26 @@
   background-size: contain;
 }
 
-
-.search-container {
+#apiDisplayContainer {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #submit-search {
   height: 39px;
+  background-color: rgb(201, 197, 197);
+  padding: 0 1rem 0 1rem;
+}
+.hero-finder #heroName {
+  font-size: 4rem;
 }
 
-#heroName {
-  font-size: 4rem;
+.hero-finder-header {
+  height: auto;
+  text-align: center;
+  margin: 2rem 0 1rem 0;
 }
 
 .top-bar-right {
@@ -32,11 +41,7 @@
 
 #search-bar {
   font-family: sans-serif;
-  width: 80%;
-}
-
-#input-search {
-  width: 100%;
+  /* width: 80%; */
 }
 
 #search-button {
@@ -49,10 +54,19 @@
   z-index: 1;
 }
 .heroImage {
-  width: 500px;
-  height: 500px;
+  width: auto;
+  height: auto;
+  max-width: 500px;
+  max-height: 500px;
 }
-#weatherApi{
+#weatherApi {
   list-style-type: none !important;
   text-align: left;
-  color: rgb(77, 77, 190);}
+  color: rgb(77, 77, 190);
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
