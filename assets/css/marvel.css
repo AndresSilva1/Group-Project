@@ -53,11 +53,10 @@
   background-color: #eee;
   z-index: 1;
 }
-.heroImage {
-  width: auto;
-  height: auto;
+.heroThumbnail {
   max-width: 500px;
   max-height: 500px;
+  width: 100%;
 }
 #weatherApi {
   list-style-type: none !important;
@@ -69,4 +68,22 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#heroName {
+  margin: 2rem 0 2rem 0;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#heroDescription {
+  margin: 2rem 0 0 1rem;
 }
