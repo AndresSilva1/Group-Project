@@ -13,6 +13,7 @@
   background-size: contain;
 }
 
+
 .search-container {
   display: flex;
 }
@@ -47,3 +48,11 @@
   background-color: #eee;
   z-index: 1;
 }
+.heroImage {
+  width: 500px;
+  height: 500px;
+}
+#weatherApi{
+  list-style-type: none !important;
+  text-align: left;
+  color: rgb(77, 77, 190);}
